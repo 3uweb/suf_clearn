@@ -36,6 +36,7 @@ class suf_clearn_public_core
             'disabletrackbacks.php',
             'navclearn.php',
             'nicesearch.php',
+            'js-to-footer.php',
         );
 
         $this->suf_clearn_files();
