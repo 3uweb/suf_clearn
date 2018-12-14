@@ -1,0 +1,14 @@
+{
+    "name": "ryan/suf_clearn",
+    "description": "the plugin for 3uweb normal project",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SUFPROJECT",
+            "email": "song@3u-web.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
