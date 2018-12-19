@@ -1,7 +1,7 @@
 <?php
 
-add_filter('wp_nav_menu_args', 'suf_nav_menu_args');
-add_filter('nav_menu_item_id', '__return_null');
+//add_filter('wp_nav_menu_args', 'suf_nav_menu_args');
+//add_filter('nav_menu_item_id', '__return_null');
 
 function suf_nav_menu_args($args = '') {
     $nav_menu_args = [];

@@ -22,7 +22,6 @@ class suf_clearn_admin_core{
 	public function __construct(){
 		
 		$this->init();
-		$this->start();
 
 	}
 
@@ -31,17 +30,20 @@ class suf_clearn_admin_core{
     	/**
     	 *  Visual Composer 组件加载
     	 */
-    	if (class_exists('WPBakeryShortCode')) {
-    		$this->vc_before_init_actions();
-    	}
+
+        $this->start();
+
     }
 
 	public function start(){
 
+        if (class_exists('WPBakeryShortCode')) {
+            add_action('vc_before_init', array($this,'vc_before_init_actions'));
+        }
 
 	}
 
-	private function vc_before_init_actions()
+	public function vc_before_init_actions()
     {
         
         $vc_addons_files = array(

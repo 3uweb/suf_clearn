@@ -7,8 +7,10 @@ if (!class_exists('SUF_Company_outline')) {
 // Element Class
     class SUF_Company_outline extends WPBakeryShortCode
     {
+
+
         // Element Init
-        function __construct()
+        public function __construct()
         {
             add_action('init', array($this, 'suf_Company_outline_map'));
             add_shortcode('suf_Company_outline', array($this, 'suf_Company_outline_html'));
@@ -97,7 +99,12 @@ if (!class_exists('SUF_Company_outline')) {
         public function suf_Company_outline_html($atts)
         {
 
+            if (!defined('WPB_VC_VERSION')) {
+                return;
+            }
             global $post;
+
+
             // Params extraction
             extract(
                 shortcode_atts(
@@ -129,11 +136,11 @@ if (!class_exists('SUF_Company_outline')) {
 
         }
 
-        function suf_custom_styles()
+        public function suf_custom_styles()
         {
-
+            echo "<script>console.log('".__SUFPLUGINURI__ . '/assets/css/company-outlines.css'."');</script>";
             /*Enqueue The Styles*/
-            wp_enqueue_style('suf-cssgroup-compout', __SUFURI__ . '/assets/css/company-outlines.css', false, SUF_ADDONS_VERSION, 'screen, print');
+            wp_enqueue_style('suf-cssgroup-compout', __SUFPLUGINURI__ . '/assets/css/company-outlines.css', false, SUF_ADDONS_VERSION, 'screen, print');
         }
 
     } // End Element Class

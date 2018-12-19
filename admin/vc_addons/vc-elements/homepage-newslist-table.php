@@ -12,6 +12,7 @@ class suf_Homepage_NewsList_Table extends WPBakeryShortCode
     {
         add_action('init', array($this, 'vc_newslist_table_mapping'));
         add_shortcode('suf_Homepage_NewsList_Table', array($this, 'vc_newslist_table_html'));
+        add_action('wp_enqueue_scripts', array($this, 'suf_custom_styles'), 1);
     }
 
     // Element Mapping
@@ -150,6 +151,13 @@ class suf_Homepage_NewsList_Table extends WPBakeryShortCode
             $list[$category->name] = $category->term_id;
         }
         return $list;
+    }
+
+    public function suf_custom_styles()
+    {
+        echo "<script>console.log('".__SUFPLUGINURI__ . '/assets/css/company-outlines.css'."');</script>";
+        /*Enqueue The Styles*/
+        wp_enqueue_style('suf-cssgroup-newslist', __SUFPLUGINURI__ . '/assets/css/homepage-newslist-table.css', false, SUF_ADDONS_VERSION, 'screen, print');
     }
 
 } // End Element Class
