@@ -155,7 +155,6 @@ class suf_Homepage_NewsList_Table extends WPBakeryShortCode
 
     public function suf_custom_styles()
     {
-        echo "<script>console.log('".__SUFPLUGINURI__ . '/assets/css/company-outlines.css'."');</script>";
         /*Enqueue The Styles*/
         wp_enqueue_style('suf-cssgroup-newslist', __SUFPLUGINURI__ . '/assets/css/homepage-newslist-table.css', false, SUF_ADDONS_VERSION, 'screen, print');
     }

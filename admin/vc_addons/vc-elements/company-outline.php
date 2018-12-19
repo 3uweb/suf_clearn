@@ -138,7 +138,7 @@ if (!class_exists('SUF_Company_outline')) {
 
         public function suf_custom_styles()
         {
-            echo "<script>console.log('".__SUFPLUGINURI__ . '/assets/css/company-outlines.css'."');</script>";
+        
             /*Enqueue The Styles*/
             wp_enqueue_style('suf-cssgroup-compout', __SUFPLUGINURI__ . '/assets/css/company-outlines.css', false, SUF_ADDONS_VERSION, 'screen, print');
         }

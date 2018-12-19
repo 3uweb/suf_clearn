@@ -33,11 +33,11 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * 创建常量
  */
-$masterfolder = explode('/', dirname(__FILE__));
+$masterfolder = basename(__DIR__);
 define('SUF_ADDONS_VERSION', '1.0');
 define('__SUFPLUGINPATH__', __DIR__);
 define('__SUFTHEMEPATH__', get_template_directory());
-define('__SUFPLUGINURI__', plugins_url().'/'.$masterfolder[count($masterfolder) - 1]);
+define('__SUFPLUGINURI__', plugins_url().'/'.$masterfolder);
 
 
 
