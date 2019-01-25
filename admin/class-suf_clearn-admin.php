@@ -52,8 +52,6 @@ class Suf_clearn_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		$suf_clearn_admin_core = new suf_clearn_admin_core();
-
 	}
 
 	/**
@@ -101,14 +99,5 @@ class Suf_clearn_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/suf_clearn-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-
-
-    private function vc_before_init_actions()
-    {
-        // 加入一个首页新闻列表
-        // require_once(__DIR__ . '/vc-elements/homepage-newslist-table.php');
-        require_once(__DIR__ . '/vc-elements/company-outline.php');
-
-    }
 
 }

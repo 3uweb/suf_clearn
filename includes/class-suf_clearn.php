@@ -116,6 +116,7 @@ class Suf_clearn {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-suf_clearn-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/suf_clearn-admin-core.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/suf_clearn-admin-display.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
