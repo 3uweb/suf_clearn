@@ -1,0 +1,13 @@
+.custom {
+  color: #fff;
+}
+
+.suf_sharelink_link {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+}
+
+.suf_sharelink_link img {
+  max-height: 36px;
+}
