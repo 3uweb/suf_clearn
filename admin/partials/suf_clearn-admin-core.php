@@ -53,7 +53,7 @@ if (!class_exists('suf_clearn_admin_core')) {
         {
 
             $suf_add_widgets = array(
-                'vcpluginforwidget.php',
+                'sharebuttonforwidget.php',
             );
             foreach ($suf_add_widgets as $filesname) {
                 if (file_exists(__SUFPLUGINPATH__ . '/admin/addons/widgets/' . $filesname)) {
