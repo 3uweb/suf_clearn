@@ -23,6 +23,7 @@ if (!class_exists('suf_clearn_admin_core')) {
         {
 
             $this->init();
+            add_action( 'admin_init', array($this,'custom_admin_menu' ));
 
         }
 
@@ -32,6 +33,36 @@ if (!class_exists('suf_clearn_admin_core')) {
                 add_action('vc_before_init', array($this, 'vc_before_init_actions'));
             }
             $this->suf_add_widgets();
+        }
+
+
+        public function custom_admin_menu(){
+            $current_user = wp_get_current_user();
+            global $menu,$submenu;
+            // var_dump($menu);
+            if ($current_user->user_login=='3uweb') :
+                foreach ($menu as $mkey => $mval) {
+                    if (in_array($mval[2], [
+                                  'edit.php?post_type=project',
+                                  'edit-comments.php',
+                                  'tools.php',
+                                  'options-general.php',
+                                  'et_divi_options',
+                                  'vc-general',
+                                  'about-ultimate',
+                        ])) {
+                      unset($menu[$mkey]);
+                    }
+                }
+            endif;
+            // if ($current_user->user_login=='3uweb') {
+            //    remove_menu_page( 'edit-comments.php' );
+            //    remove_menu_page( 'edit.php?post_type=project' );
+            //    remove_menu_page( 'vc-general' );
+            //    remove_menu_page( 'about-ultimate' );
+            //    remove_menu_page( 'et_divi_options' );
+            // }
+
         }
 
         public function vc_before_init_actions()
