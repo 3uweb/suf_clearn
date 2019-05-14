@@ -40,7 +40,7 @@ if (!class_exists('suf_clearn_admin_core')) {
             $current_user = wp_get_current_user();
             global $menu,$submenu;
             // var_dump($menu);
-            if ($current_user->user_login=='3uweb') :
+            if ($current_user->user_login!='3uweb') :
                 foreach ($menu as $mkey => $mval) {
                     if (in_array($mval[2], [
                                   'edit.php?post_type=project',
