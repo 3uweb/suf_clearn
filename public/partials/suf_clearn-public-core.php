@@ -25,7 +25,7 @@ class suf_clearn_public_core
 
         $this->init();
         add_action('init', array($this, 'sufclear_disable_emojis'));
-
+        add_filter('pre_option_avatar_default', array($this, '__default_local_avatar'));
     }
 
     private function init()
@@ -88,6 +88,12 @@ class suf_clearn_public_core
         }
 
         return $urls;
+    }
+
+    private function __default_local_avatar()
+    {
+        // this assumes default_avatar.png is in wp-content/themes/active-theme/images
+        return __SUFPLUGINURI__ . '/assets/img/default_avatar.png';
     }
 
 }
