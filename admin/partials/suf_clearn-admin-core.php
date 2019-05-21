@@ -85,6 +85,7 @@ if (!class_exists('suf_clearn_admin_core')) {
 
             $suf_add_widgets = array(
                 'sharebuttonforwidget.php',
+                'suf-add-login-button.php',
             );
             foreach ($suf_add_widgets as $filesname) {
                 if (file_exists(__SUFPLUGINPATH__ . '/admin/addons/widgets/' . $filesname)) {
